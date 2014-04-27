@@ -1,0 +1,26 @@
+	<div ng-controller="HeaderController">
+
+		<!-- User Settings -->
+		<div ng-controller="LoginController">
+			<div class ="container" style="margin-top:20px;" ng-show="loggedIn">
+				<form class="form-signin" role="form">
+					<p><img src="http://placehold.it/100x100" class="img-circle">
+
+					<p><input class="form-control" id="edit" placeholder="Name"></p>
+					<p><input class="form-control" id="edit" placeholder="Phone #" data-mask="(999) 999-9999"></p>
+					<p><input class="form-control" id="edit" placeholder="Address"></p>
+					
+					<p><input class="form-control" id="edit" placeholder="Email"></p>
+					<p><input class="form-control" id="edit" placeholder="Old Password"></p>
+					<p><input class="form-control" id="edit" placeholder="New Password"></p>
+					<p><input class="form-control" id="edit" placeholder="Confirm New Password"></p>
+					<br />
+					<p><button type="submit" class="btn btn-lg btn-default btn-block">Edit</button></p>
+					<p><button type="button" class="btn btn-lg btn-info btn-block" ng-click="logout()">Logout</button></p>
+				</form>
+				<div class="container" ng-show="loggedOut"><h1><a href="#/login">Please Log In</a></h1></div>
+			</div>
+		</div>
+		<!-- /User Settings -->
+
+	</div>

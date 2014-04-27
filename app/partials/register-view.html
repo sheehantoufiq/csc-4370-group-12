@@ -1,0 +1,35 @@
+		<!-- Register -->
+			<div ng-controller="RegisterController">
+				<div class="container" style="margin-top:20px;">
+					<form ng-submit="register()" class="form-signin" role="form" name="form">
+            <input ng-model="email" type="email" class="form-control" id="top" placeholder="Email">
+            <input 
+            	name="password" 
+            	ng-model="password" 
+            	required
+            	type="password" 
+            	class="form-control" 
+            	id="middle" 
+            	placeholder="Password"
+            >
+	  				<input 
+	  					name="confirm" 
+	  					ng-model="user.verify" 
+            	type="password" 
+	  					class="form-control" 
+	  					id="bottom" 
+	  					placeholder="Confirm Password" 
+	  					required 
+	  					nx-equal="password" 
+	  				>
+        		<div ng-show="form.confirm.$error.nxEqual" style="color:#D9534F; font-size:12px; font-style: italic;">
+        			Your passwords must be equal.
+        		</div>
+        		<div ng-model="msg" style="color:#D9534F; font-size:12px; font-style: italic;">{{msg}}</div>
+	  				<p><button type="submit" class="btn btn-lg btn-success btn-block">Register</button></p>
+	  				<p><a href="#/login"><span class="glyphicon glyphicon-chevron-left"></span> Back to Login</a></p>
+
+	  			</form>
+	  		</div>
+			</div>
+		<!-- /Register -->

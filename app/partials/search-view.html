@@ -1,0 +1,35 @@
+		<div ng-controller="HeaderController">
+
+			<!-- Search -->
+			<div ng-controller="FeedController">
+				<div class="container" ng-show="loggedIn">
+					<input type="text" ng-model="query" placeholder="Search your inventory..." class="form-control" style="margin-top: 20px;"/>
+
+					<table class="table" style="margin-top: 20px;">
+						<tr ng-repeat="item in inventory.items | filter:query">
+							<td width="110px"><img src="http://placehold.it/100x100" class="img-circle"></td>
+							<td><a ng-href="#/item/{{item.item_id}}">{{item.item_name}}</a><br />
+									Quantity: {{item.item_quantity}}<br />
+									MSRP: ${{item.item_price}}</td>
+							<td class="right-cell">
+								<ul class="menu">
+									<li style="padding:5px;">
+										<span id="tooltip" style="font-size:16px;" data-toggle="tooltip" data-placement="top" title="Edit" class="glyphicon glyphicon-pencil tt"> </span>
+									</li>
+									<li style="padding:5px;">
+										<span id="tooltip" style="font-size:16px;" data-toggle="tooltip" data-placement="top" title="Delete" class="glyphicon glyphicon-remove tt"> </span>
+									</li>
+									<li style="padding:5px;">
+										<span id="tooltip" style="font-size:16px;" data-toggle="tooltip" data-placement="top" title="Share" class="glyphicon glyphicon-share-alt tt"> </span>
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+					<div class="container" ng-show="loggedOut"><h1><a href="#/login">Please Log In</a></h1></div>
+				</div>
+				<!-- /Container -->
+			</div>
+			<!-- /Search -->
+		</div>
+

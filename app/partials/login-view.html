@@ -1,0 +1,23 @@
+		<!-- Login -->
+	   <div ng-controller="LoginController">
+        <div class="container" style="margin-top:20px;">
+    	<form ng-submit="login()" class="form-signin" role="form">
+            <input ng-model="email" required type="email" class="form-control" id="top" placeholder="Email">
+            <input ng-model="password" required type="password" class="form-control" id="bottom" placeholder="Password">
+            <div ng-model="msg" style="color:#D9534F; font-size:12px; font-style: italic;">{{msg}}</div>
+            <label class="checkbox">
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            <p>
+              <button type="submit" class="btn btn-lg btn-info btn-block">Sign in</button>
+            </p>
+            <p>
+              <a href="#/register" role="button" class="btn btn-lg btn-success btn-block">Register</a>
+            </p>
+            <p><a href="#/forgot-password">Forgot Password</a></p>
+    	</form>
+
+
+        </div>
+		 </div>
+		<!-- /Login -->
