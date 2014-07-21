@@ -7,39 +7,21 @@ require 'Slim/Slim.php';
 $app = new Slim();
 
 // User Rest Endpoints
-$app->get(		'/users', 			'getUsers');
+$app->get(		'/users', 	'getUsers');
 $app->get(		'/users/:id', 	'getUser');
-$app->post(		'/add_user', 		'addUser');
-$app->post(		'/login', 			'loginUser');
+$app->post(		'/add_user', 	'addUser');
+$app->post(		'/login', 	'loginUser');
 $app->put(		'/users/:id', 	'updateUser');
-$app->delete(	'/users/:id', 	'deleteUser');
-
-// User Getter and Setter
-$app->post(		'/set_user', 		'saveUserinfo');
-$app->get(		'/get_user', 		'getUserinfo');
+$app->delete(		'/users/:id', 	'deleteUser');
 
 // Inventory Rest Endpoints
-$app->get(		'/items/:userId', 			'getItems');
+$app->get(		'/items/:userId', 	'getItems');
 $app->get(		'/items/:userId/:id', 	'getItem');
-$app->post(		'/add_item', 						'addItem');
+$app->post(		'/add_item', 		'addItem');
 $app->put(		'/items/:userId/:id', 	'updateItem');
-$app->delete(	'/items/:userId/:id', 	'deleteItem');
+$app->delete(		'/items/:userId/:id', 	'deleteItem');
 
 $app->run();
-
-class savedUser {
-	public $userSetter = '';
-	
-	public function setUser($userSetter) {
-		$this->userSetter = $userSetter;
-	}
-
-	public function getUser() {
-		return $this->userSetter;
-	}
-}
-
-$userID = new savedUser();
 
 function getConnection() {
 	$dbhost="localhost";
